@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
 import { Search,Package, Plus, Minus, Trash2,LogOut, Lock, User,  RefreshCw, Save, Bold, Italic } from 'lucide-react';
-import logoImg from './you.JPG';
+import logoImg from './you.jpg';
 const API_URL = "http://dyson.infinityfreeapp.com";
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,7 +17,7 @@ export default function App() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://dyson.infinityfreeapp.com/login.php", {
+      const response = await fetch("http://	sql100.infinityfree.com/login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials),
@@ -40,7 +40,7 @@ const filteredStocks = stocks.filter(item =>
   const fetchStocks = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://dyson.infinityfreeapp.com/getstocks.php");
+      const res = await fetch("http://	sql100.infinityfree.com/getstocks.php");
       const data = await res.json();
       setStocks(Array.isArray(data) ? data : []);
     } catch (err) { console.error("Erreur XAMPP:", err); }
@@ -53,7 +53,7 @@ const filteredStocks = stocks.filter(item =>
   const handleSubmit = async (e) => {
     e.preventDefault(); // EMPÊCHE LA PAGE DE DISPARAÎTRE
     try {
-      const res = await fetch("http://dyson.infinityfreeapp.com/save.php", {
+      const res = await fetch("http://	sql100.infinityfree.com/save.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
