@@ -40,7 +40,7 @@ const filteredStocks = stocks.filter(item =>
   const fetchStocks = async () => {
     setLoading(true);
     try {
-      const res = await fetch("https://dyson.infinityfree.me/getstocks.php");
+      const res = await fetch('https://dyson.infinityfree.me/getstocks.php');
       const data = await res.json();
       setStocks(Array.isArray(data) ? data : []);
     } catch (err) { console.error("Erreur XAMPP:", err); }
