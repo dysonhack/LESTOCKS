@@ -17,7 +17,7 @@ export default function App() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://dyson.infinityfree.me/login.php", {
+      const response = await fetch("https://dyson.infinityfree.me/login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials),
@@ -40,7 +40,7 @@ const filteredStocks = stocks.filter(item =>
   const fetchStocks = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://dyson.infinityfree.me/getstocks.php");
+      const res = await fetch("https://dyson.infinityfree.me/getstocks.php");
       const data = await res.json();
       setStocks(Array.isArray(data) ? data : []);
     } catch (err) { console.error("Erreur XAMPP:", err); }
@@ -53,7 +53,7 @@ const filteredStocks = stocks.filter(item =>
   const handleSubmit = async (e) => {
     e.preventDefault(); // EMPÊCHE LA PAGE DE DISPARAÎTRE
     try {
-      const res = await fetch("http://dyson.infinityfree.me/save.php", {
+      const res = await fetch("https://dyson.infinityfree.me/save.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -77,7 +77,7 @@ const adjustQty = async (id, action) => {
   console.log("Tentative de modif pour ID:", id, "Action:", action);
 
   try {
-    const response = await fetch("http://dyson.infinityfree.me/qty.php", {
+    const response = await fetch("https://dyson.infinityfree.me/qty.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id: id, action: action }),
